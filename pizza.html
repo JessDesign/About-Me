@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="pizza.html">Order Pizza </a></li>
+           
+        
+        </ul>
+
+        <header>
+            <h1>
+               Order Pizza
+            </h1>
+         </header>
+       
+         <article>
+            <h2> Delivery Address</h2>
+            <form>
+              <fieldset id="contactinfo">
+                <label for="addrinput">
+                  Street Address
+                </label>
+                <input type="text" id="addrinput" name="Address" />
+                <label for="cityinput">
+                  City
+                </label>
+                <input type="text" id="cityinput" name="City" />
+                <label for="stateinput">
+                  State/Province
+                </label>
+                <input type="text" id="stateinput" name="State" />
+                <label for="zipinput">
+                  Zip/Postal Code
+                </label>
+                <input type="number" id="zipinput" name="Zip" />
+              </fieldset>
+              <fieldset id="submitsection">
+                <input type="button" id="submit" value="Submit" />
+              </fieldset>
+           </form>
+       
+         </article>
+         <script>
+           function processInput() {
+            var propertyWidth = 300;
+            var propertyHeight = 100;
+            var winLeft = ((screen.width - propertyWidth) / 2);
+            var winTop = ((screen.height - propertyHeight) / 2);
+            var winOptions = "width=300,height=100";
+            winOptions += ",left=" + winLeft;
+            winOptions += ",top=" + winTop;
+            window.open("confirm.htm", "confirm", winOptions);
+           }
+       
+           function createEventListener() {
+            var submitButton = document.getElementById("submit");
+              if (submitButton.addEventListener) {
+                submitButton.addEventListener("click", processInput, false);
+              }
+              else if (submitButton.attachEvent) {
+                submitButton.attachEvent("onclick", processInput);
+              }
+           }
+       
+           if (window.addEventListener) {
+              window.addEventListener("load", createEventListener, false);
+            }
+            else if (window.attachEvent) {
+              window.attachEvent("onload", createEventListener);
+            }
+         </script>
+
+<article>
+<fieldset id="message" class="checks">
+    <legend>Type of Pizza</legend>
+    <input id="cheesecrust" name="CheeseCrust" type="checkbox">
+    <label for="cheesecrust">Cheese Crust</label>
+    <input id="rcrust" name="RegularCrust" type="checkbox">
+    <label for="rcrust">Regular Crust</label>
+    <input id="tcrust" name="ThinCrust" type="checkbox">
+    <label for="tcrust">Thin Crust</label>
+    <input id="pepperoni" name="Pepperoni" type="checkbox">
+    <label for="pepperoni">Pepperoni</label>
+    <input id="sausage" name="Sausage" type="checkbox">
+    <label for="sausage">Sausage</label>
+    <input id="pinapple" name="Pinapple" type="checkbox">
+    <label for="pinapple">Pinapple</label>
+    <input id="ham" name="Ham" type="checkbox">
+    <label for="ham">Ham</label>
+    <div class="errorMessage"></div>
+  </fieldset>
+
+</form>
+</article>
+
+<h2><b>Payment Details</b></h2>
+        <p>Card Type:*
+            <select name="card_type" id="card_type" required>
+                <option value="">--Select Your Card--</option>
+                <option value="visa">Visa</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="debit_card">Debit Card</option>
+                <option value="mastercard">Mastercard</option>
+                
+            </select>
+        </p>
+        <p>Card Number: *<input type="number" name="card_number" id="card_number" placeholder="1111-2222-3333-4444" required></p>
+        <p>Expiration Date: *<input type="date" name="expiry_date" id="expiry_date" required></p>
+        <p>CVV: *<input type="password" name="cvv" id="cvv" placeholder="1234" required></p>
+        <input type="submit" value="Pay Now">
+    </form>
+    </div>
+
+    
+</body>
+</html>
